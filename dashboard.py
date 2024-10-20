@@ -4,8 +4,8 @@ import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
 
-# Cargar el CSV exportado
-clientes_tickets_df = pd.read_parquet('Clientes_tickets.parquet')
+# Cargar el parquet generado
+clientes_tickets_df = pd.read_parquet('data/Clientes_tickets.parquet')
 
 # Convertir la columna de fechas a formato datetime
 clientes_tickets_df['Fecha_tiquet'] = pd.to_datetime(clientes_tickets_df['Fecha_tiquet'], errors='coerce')
