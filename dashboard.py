@@ -3,9 +3,11 @@ import plotly.express as px
 import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
+import os
 
 # Cargar el CSV exportado
-clientes_tickets_df = pd.read_parquet('Clientes_Tickets.parquet')
+clientes_tickets_df = pd.read_parquet(os.path.join(os.path.dirname(__file__), 'Clientes_Tickets.parquet'))
+
 
 # Convertir la columna de fechas a formato datetime
 clientes_tickets_df['Fecha_tiquet'] = pd.to_datetime(clientes_tickets_df['Fecha_tiquet'], errors='coerce')
