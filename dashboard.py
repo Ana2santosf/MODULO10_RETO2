@@ -5,7 +5,7 @@ from dash import dcc, html
 from dash.dependencies import Input, Output
 
 # Cargar el CSV exportado
-clientes_tickets_df = pd.read_csv(r'C:\Users\User\Desktop\MASTERRR\RETO 2_MODULO 10\Clientes_Tickets.csv')
+clientes_tickets_df = pd.read_parquet('Clientes_Tickets.parquet')
 
 # Convertir la columna de fechas a formato datetime
 clientes_tickets_df['Fecha_tiquet'] = pd.to_datetime(clientes_tickets_df['Fecha_tiquet'], errors='coerce')
