@@ -4,9 +4,8 @@ import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
 
-# Cargar el parquet generado
-clientes_tickets_df = pd.read_parquet('Clientes_Tickets.parquet')
-
+# Cargar el CSV exportado
+clientes_tickets_df = pd.read_csv(r'C:\Users\User\Desktop\MASTERRR\RETO 2_MODULO 10\Clientes_Tickets.csv')
 
 # Convertir la columna de fechas a formato datetime
 clientes_tickets_df['Fecha_tiquet'] = pd.to_datetime(clientes_tickets_df['Fecha_tiquet'], errors='coerce')
@@ -115,9 +114,5 @@ def update_graphs(selected_years):
     return bar_fig, scatter_fig, line_fig, comparison_fig, ticket_evolution_fig
 
 # Ejecutar la aplicación
-import os
-
 if __name__ == '__main__':
-    app.run_server(debug=False, host='0.0.0.0', port=int(os.environ.get('PORT', 8050)))
-
-
+    app.run_server(debug=True)
