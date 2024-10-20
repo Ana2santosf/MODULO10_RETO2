@@ -1,4 +1,5 @@
-web: waitress-serve --port=$PORT dashboard:app
+waitress-serve --port=8050 dashboard:app
+
 
 
 
