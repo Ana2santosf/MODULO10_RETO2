@@ -6,7 +6,7 @@ from dash.dependencies import Input, Output
 import os
 
 # Cargar el CSV exportado
-clientes_tickets_df = pd.read_parquet(os.path.join(os.path.dirname(__file__), 'Clientes_Tickets.parquet'))
+clientes_tickets_df = pd.read_parquet('Clientes_Tickets.parquet')
 
 
 # Convertir la columna de fechas a formato datetime
@@ -119,4 +119,4 @@ def update_graphs(selected_years):
 if __name__ == '__main__':
     import os
     port = int(os.environ.get("PORT", 8050))  # Usa el puerto de la variable de entorno o 8050 por defecto
-    app.run_server(host='0.0.0.0', port=port, debug=True)
+    app.run_server(host='0.0.0.0', port=port)
