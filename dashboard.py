@@ -117,4 +117,6 @@ def update_graphs(selected_years):
 
 # Ejecutar la aplicación
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    import os
+    port = int(os.environ.get("PORT", 8050))  # Usa el puerto de la variable de entorno o 8050 por defecto
+    app.run_server(host='0.0.0.0', port=port, debug=True)
