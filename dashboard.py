@@ -115,5 +115,9 @@ def update_graphs(selected_years):
     return bar_fig, scatter_fig, line_fig, comparison_fig, ticket_evolution_fig
 
 # Ejecutar la aplicación
+import os
+
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    port = int(os.environ.get('PORT', 8050))
+    app.run_server(debug=False, host='0.0.0.0', port=port)
+
